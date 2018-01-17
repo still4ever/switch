@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>控制DOM对象</title>
+
+    <style>
+        .divFrame {
+            width: 260px;
+                border: 1px solid #666666;
+            font-size: 10pt;
+        }
+
+        .divTitle {
+            background-color: #eeeeee;
+            padding: 5px;
+           }
+
+        .divContent {
+            padding: 8px;
+            font-size: 9pt;
+        }
+
+        .divTip {
+            width: 244px;
+               border: 1px solid #666666;
+            padding: 8px;
+              font-size: 9pt;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .txtCss {
+              border: 1px solid #cccccc;
+        }
+
+         .divBtn {
+            padding-top: 5px;
+        }
+   
+        .divBtn .btnCss {
+            border: 1px solid #535353;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="Frame">
+        <div class="divTitle">请输入如下信息</div>
+        <div class="divContent">
+            姓名：<input type="text" id="Text1" class="txtCss"/></br>
+            性别：<input type="radio" name="rdoSex" id="Radio1" value="男"/>男
+                  <input type="radio" name="rdoSex" id="Radio2" value="女"/>女
+            婚否：<input type="checkbox" id="Checkbox1">
+            <div class="divBtn">
+                <input type="button" value="提交" id="Button1" class="btnClass" onclick="btnClick()">
+            </div>
+        </div>
+    </div>
+    <div id="divTip" class="divTip"></div>
+
+    <script src="../../Jscript/jquery-3.2.1.min.js"></script>
+    <script>
+        var test = btnClick();
+
+        function btnClick() {
+            var oTxtValue =  document.getElementById("Text1").value;
+            var oRdoValue =  (Radio1.checked) ? "男" : "女";
+            var oChkValue = (Checkbox1.checked) ? "已婚" : "未婚";
+            document.getElementById("divTip").style.display = "block";
+            document.getElementById("divTip").innerHTML = oTxtValue + "<br>" + oRdoValue + "<br>" + oChkValue;
+        }
+    </script>
+</body>
+</html>
